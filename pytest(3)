@@ -1,0 +1,36 @@
+from main import (
+    factorial,
+    is_prime,
+    unique_elements
+)
+
+def test_factorials():
+    assert factorial(5) == 120
+    assert factorial(-1) == None
+    assert factorial(-2) == None
+    assert factorial(1) == 1
+    assert factorial(0) == 1
+    assert factorial(6) == 720
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(5) == 120
+    
+def test_is_primes():
+    assert is_prime(2) == True
+    assert is_prime(1) == False
+    assert is_prime(0) == False
+    assert is_prime(11) == True
+    assert is_prime(6) == False
+
+def test_unique_elements():
+    assert unique_elements([1, 2, 2, 3, 4, 4, 5]) == [1, 2, 3, 4, 5]
+    assert unique_elements([1, 1, 1]) == [1]
+    assert unique_elements([2]) == [2]
+    assert unique_elements([]) == []
+    assert unique_elements([1, 2, 3]) == [1, 2, 3]
+    assert unique_elements(['a', 'a', 'a']) == ['a']
+    assert unique_elements(['a', 'a', 'b']) == ['a', 'b'] or ['b', 'a']
+    assert unique_elements(['aabbccdd']) == ['aabbccdd']
+    assert unique_elements(['!', '@', '@']) == ['!', '@'] or ['@', '!']
+    assert unique_elements(['a', 'a', 1, 1]) == ['a', 1] or [1, 'a']
