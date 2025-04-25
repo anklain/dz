@@ -1,0 +1,8 @@
+from main import (
+    factorial,
+    is_prime
+)
+
+def factorial():
+    assert factorial(2) == 2
+    
